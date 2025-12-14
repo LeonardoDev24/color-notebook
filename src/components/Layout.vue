@@ -1,16 +1,18 @@
 <script setup lang="ts">
+import type { RouterLink } from 'vue-router';
+
 </script>
 
 <template>
     <header>
         <nav>
             <a class="btn" href="/">Color Notebook</a>
-            <a href="/new">
+            <RouterLink to="/new">
                 <button class="navbar-btn">
                     New
                     <i class="fa-solid fa-file-pen"></i>
                 </button>
-            </a>
+            </RouterLink>
         </nav>
     </header>
 
