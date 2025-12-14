@@ -1,0 +1,26 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    width: 85%;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-large);
+}
+
+textarea {
+    height: 12rem;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    background-color: var(--light-blue);
+}
+
+#formButtons {
+    display: flex;
+    justify-content: space-around;
+}
