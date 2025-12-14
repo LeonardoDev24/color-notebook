@@ -1,4 +1,5 @@
 <script setup lang="ts">
+    import { Note, type NoteJSON } from '../models/note-model'
     const textPlaceholder = "Wetness is the liquid's ability to maintain contact with a solid surface, meaning that water itself is not wet \nSource: BBC Science Focus"
     function addNote(e: SubmitEvent): void {
         e.preventDefault()
