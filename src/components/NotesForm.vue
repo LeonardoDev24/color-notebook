@@ -1,10 +1,14 @@
 <script setup lang="ts">
-    import { Note, type NoteJSON } from '../models/note-model'
+    import { Note } from '../models/note-model'
     const textPlaceholder = "Wetness is the liquid's ability to maintain contact with a solid surface, meaning that water itself is not wet \nSource: BBC Science Focus"
     function addNote(e: SubmitEvent): void {
         e.preventDefault()
-        const form = e.target
-        console.log(form)
+        const form = e.target as HTMLFormElement
+        const title = form.elements.namedItem("title") as HTMLInputElement
+        const body = form.elements.namedItem("body") as HTMLTextAreaElement
+        
+        const note = new Note(title.value,body.value)
+        note.save()
     }
 </script>
 
