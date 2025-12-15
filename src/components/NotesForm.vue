@@ -1,6 +1,10 @@
 <script setup lang="ts">
+    import { useRouter } from 'vue-router'
     import { Note } from '../models/note-model'
     const textPlaceholder = "Wetness is the liquid's ability to maintain contact with a solid surface, meaning that water itself is not wet \nSource: BBC Science Focus"
+    
+    const router = useRouter()
+    
     function addNote(e: SubmitEvent): void {
         e.preventDefault()
         const form = e.target as HTMLFormElement
@@ -9,6 +13,7 @@
         
         const note = new Note(title.value,body.value)
         note.save()
+        router.push("/notes")
     }
 </script>
 

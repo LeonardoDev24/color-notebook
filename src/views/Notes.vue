@@ -14,10 +14,15 @@ let totalNotes = localStorage.length
 //     notes.push(note)
 // }
 
+function sortByDate(a: NoteJSON, b: NoteJSON): number {
+    return b.longDate.localeCompare(a.longDate)
+}
+
 const notes: NoteJSON[] = Object.keys(localStorage) // Array of localStorage keys
     .map(key => localStorage.getItem(key)) // Array of localStorage items
     .filter(value => value !== null) // Erase nulls
     .map(note => JSON.parse(note)) // Return notes interface
+    .sort(sortByDate)
 
 </script>
 

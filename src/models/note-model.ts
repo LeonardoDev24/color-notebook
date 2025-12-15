@@ -5,6 +5,7 @@ interface NoteJSON {
     title: string,
     body: string,
     readonly createdAt: string
+    readonly longDate: string
 }
 
 class Note {
@@ -28,10 +29,17 @@ class Note {
         return this.createdAt
     }
 
-    getHumanReadableDate(): string {
+    public getHumanReadableDate(): string {
         return this.createdAt.toLocaleString("en-CA",{
             dateStyle: "medium",
             timeStyle: "short"
+        })
+    }
+
+    public longDate(): string {
+        return this.createdAt.toLocaleString("en-CA",{
+            dateStyle: "medium",
+            timeStyle: "medium"
         })
     }
 
@@ -40,7 +48,8 @@ class Note {
             _id: this._id,
             title: this.title,
             body: this.body,
-            createdAt: this.getHumanReadableDate()
+            createdAt: this.getHumanReadableDate(),
+            longDate: this.longDate()
         }
 
         localStorage.setItem(this._id,JSON.stringify(note))
