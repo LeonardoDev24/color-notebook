@@ -30,7 +30,7 @@ const notes: NoteJSON[] = Object.keys(localStorage) // Array of localStorage key
     </section>
     <section v-else id="notes-container">
         <ol id="all-notes">
-            <li v-for="note in notes" class="note orange" :key="note._id">
+            <li v-for="note in notes" :class="`note ${note.color}`" :key="note._id">
                 <a :href="`/${note.title}`" class="note-link">
                     <article>
                         <div class="note-title">

@@ -20,7 +20,42 @@ input:focus, textarea:focus {
     background-color: var(--light-blue);
 }
 
+div#colors {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#colors label {
+    border-radius: var(--border-radius-large);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 6rem;
+}
+
+div#colors label:hover {
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    border: 2px solid var(--light-blue);
+}
+
 #formButtons {
     display: flex;
     justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+    div#colors {
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        gap: 1rem;
+        margin: 0 auto;
+    }
 }

@@ -1,17 +1,20 @@
 <script setup lang="ts">
     import { useRouter } from 'vue-router'
     import { Note } from '../models/note-model'
+    import { ref } from 'vue'
     const textPlaceholder = "Wetness is the liquid's ability to maintain contact with a solid surface, meaning that water itself is not wet \nSource: BBC Science Focus"
+    const colors: string[] = ["Red","Orange","Yellow","Green","Blue","Purple"]
+    let selectedColor = ref<string>("")
     
     const router = useRouter()
-    
+
     function addNote(e: SubmitEvent): void {
         e.preventDefault()
         const form = e.target as HTMLFormElement
         const title = form.elements.namedItem("title") as HTMLInputElement
         const body = form.elements.namedItem("body") as HTMLTextAreaElement
         
-        const note = new Note(title.value,body.value)
+        const note = new Note(title.value,body.value,selectedColor.value)
         note.save()
         router.push("/notes")
     }
@@ -24,6 +27,16 @@
         <br>
         <label for="body"><h5>Description</h5></label>
         <textarea name="body" id="body" :placeholder="textPlaceholder"></textarea>
+        <br>
+        <h5>Color</h5>
+        <div id="colors">
+            <div v-for="color in colors">
+                <input type="radio" name="color" :id="color" :value="color" v-model="selectedColor">
+                <label :for="color" :class="color">
+                    <span>{{ color }}</span>
+                </label>
+            </div>
+        </div>
         <br>
         <div id="formButtons">
             <button type="reset">

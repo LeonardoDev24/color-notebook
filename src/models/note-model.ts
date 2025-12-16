@@ -4,6 +4,7 @@ interface NoteJSON {
     readonly _id: string
     title: string,
     body: string,
+    color: string,
     readonly createdAt: string
     readonly longDate: string
 }
@@ -12,12 +13,14 @@ class Note {
     private _id: string
     public title: string
     public body: string
+    public color: string
     private createdAt: Date
 
-    constructor(title: string, body: string) {
+    constructor(title: string, body: string, color: string) {
         this._id = nanoid()
         this.title = title,
         this.body = body,
+        this.color = color,
         this.createdAt = new Date()
     }
 
@@ -48,6 +51,7 @@ class Note {
             _id: this._id,
             title: this.title,
             body: this.body,
+            color: this.color,
             createdAt: this.getHumanReadableDate(),
             longDate: this.longDate()
         }
