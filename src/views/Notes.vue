@@ -2,9 +2,19 @@
 import type { RouterLink } from 'vue-router'
 import loadNotes from '../utils/all-notes';
 import type { NoteJSON } from '../models/note-model';
+import DeleteModal from '../components/DeleteModal.vue';
+import { ref, Teleport } from 'vue';
 
 let totalNotes = localStorage.length
 const notes: NoteJSON[] = loadNotes()
+
+const showDeleteAll = ref<boolean>(false)
+
+function deleteAllNotes(): void {
+    localStorage.clear()
+    showDeleteAll.value = false
+    window.location.reload()
+}
 
 </script>
 
@@ -44,5 +54,15 @@ const notes: NoteJSON[] = loadNotes()
                 </RouterLink>
             </li>
         </ol>
+        <br>
+        <button @click="showDeleteAll = true" class="btn btn-danger">
+            Delete all
+        </button>
+        <Teleport to="#portal" v-if="showDeleteAll">
+            <DeleteModal
+                item = "all"
+                @cancel="showDeleteAll = false"
+                @confirm="deleteAllNotes"/>
+        </Teleport>
     </section>
 </template>

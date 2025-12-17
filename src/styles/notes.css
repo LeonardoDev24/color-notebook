@@ -55,7 +55,7 @@ li.note article {
 
 .Yellow {
     background-color: var(--yellow);
-    color: #28282B;
+    color: var(--mate-black);
 }
 
 .Green {

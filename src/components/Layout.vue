@@ -6,7 +6,7 @@ import type { RouterLink } from 'vue-router';
 <template>
     <header>
         <nav>
-            <a class="btn" href="/">Color Notebook</a>
+            <a class="button" href="/">Color Notebook</a>
             <RouterLink to="/notes">
                 <button>
                     My notes

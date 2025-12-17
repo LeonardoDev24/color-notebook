@@ -1,4 +1,6 @@
 html {
+  --mate-black: #28282B;
+
   --color-primary-700: #001935;
   --color-primary-600: #002146;
   --color-primary-500: #002F63;
@@ -29,15 +31,14 @@ html {
 
 body {
   font-family: "Orbitron", sans-serif;
-  margin: 0;
   background-image: linear-gradient(var(--color-primary-600), var(--color-primary-500));
   color: var(--color-light);
   text-align: center;
 }
 
 main {
-  /* 7.85rem header/footer + 2rem margin top/bottom */
-  min-height: calc(100vh - 9.85rem);
+  /* 7.67rem header/footer + 2rem margin top/bottom */
+  min-height: calc(100vh - 9.67rem);
   margin: 1rem;
 }
 
@@ -49,11 +50,11 @@ header nav {
   align-items: center;
 }
 
-.btn {
+.button {
   color: var(--color-secondary-200);
 }
 
-.btn:hover {
+.button:hover {
   color: var(--color-light);
 }
 
