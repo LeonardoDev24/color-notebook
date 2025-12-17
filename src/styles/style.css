@@ -58,6 +58,10 @@ header nav {
   color: var(--color-light);
 }
 
+a#mobile {
+  display: none;
+} 
+
 button {
   color: var(--color-light);
   background-color: var(--color-secondary-400);
@@ -93,4 +97,20 @@ a {
 footer {
   background-image: linear-gradient(#000, var(--color-primary-600));
   padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  #btns {
+    width: 18rem;
+    flex-direction: column;
+    height: 6rem;
+  }
+
+  a#mobile {
+    display: inline;
+  }
+
+  a#laptop {
+    display: none;
+  }
 }

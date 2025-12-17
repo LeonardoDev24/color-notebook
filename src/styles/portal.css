@@ -22,6 +22,7 @@
     flex-direction: column;
     z-index: 20;
     border-radius: var(--border-radius-large);
+    padding: 0.5rem;
 }
 
 #option-btns {
@@ -33,5 +34,9 @@
 @media (max-width: 768px) {
     #warning {
         width: 95%;
+    }
+
+    #option-btns {
+        width: 70%;
     }
 }
