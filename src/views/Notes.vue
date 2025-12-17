@@ -16,6 +16,7 @@ function deleteAllNotes(): void {
     window.location.reload()
 }
 
+const item: "all" | "note" = "all"
 </script>
 
 <template>
@@ -57,10 +58,11 @@ function deleteAllNotes(): void {
         <br>
         <button @click="showDeleteAll = true" class="btn btn-danger">
             Delete all
+            <i class="fa-regular fa-trash-can"></i>
         </button>
         <Teleport to="#portal" v-if="showDeleteAll">
             <DeleteModal
-                item = "all"
+                :item = "item"
                 @cancel="showDeleteAll = false"
                 @confirm="deleteAllNotes"/>
         </Teleport>

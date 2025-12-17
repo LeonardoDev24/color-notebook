@@ -39,6 +39,9 @@ li.note article {
 
 .note-title h4 {
     margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .note p {
