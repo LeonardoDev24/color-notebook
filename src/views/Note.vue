@@ -8,7 +8,7 @@ const router = useRouter()
 
 const notes: NoteJSON[] = loadNotes()
 const noteId = route.params.noteid
-const thisNote: NoteJSON | undefined= notes.find(note => note._id === noteId)
+const thisNote: NoteJSON | undefined = notes.find(note => note._id === noteId)
 
 if (!thisNote) {
     router.replace("/404")

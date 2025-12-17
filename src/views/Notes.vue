@@ -10,7 +10,6 @@ const notes: NoteJSON[] = loadNotes()
 
 <template>
     <h1>My notes</h1>
-    <br>
     <section v-if="!totalNotes" class="no-notes">
         <p>You don't have notes yet. Maybe start adding?</p>
         <RouterLink to="/new">
@@ -21,6 +20,14 @@ const notes: NoteJSON[] = loadNotes()
         </RouterLink>
     </section>
     <section v-else id="notes-container">
+        <RouterLink to="/new" id="new-btn">
+            <button class="navbar-btn">
+                New
+                <i class="fa-solid fa-file-pen"></i>
+            </button>
+        </RouterLink>
+        <br>
+        <br>
         <ol id="all-notes">
             <li v-for="note in notes" :class="`note ${note.color}`" :key="note._id">
                 <RouterLink :to="`/notes/${note._id}`" class="note-link">

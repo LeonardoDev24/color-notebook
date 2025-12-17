@@ -7,10 +7,10 @@ import type { RouterLink } from 'vue-router';
     <header>
         <nav>
             <a class="btn" href="/">Color Notebook</a>
-            <RouterLink to="/new">
-                <button class="navbar-btn">
-                    New
-                    <i class="fa-solid fa-file-pen"></i>
+            <RouterLink to="/notes">
+                <button>
+                    My notes
+                    <i class="fa-regular fa-note-sticky"></i>
                 </button>
             </RouterLink>
         </nav>

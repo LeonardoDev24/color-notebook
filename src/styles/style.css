@@ -29,9 +29,9 @@ html {
 
 body {
   font-family: "Orbitron", sans-serif;
+  margin: 0;
   background-image: linear-gradient(var(--color-primary-600), var(--color-primary-500));
   color: var(--color-light);
-  /* color: aliceblue; */
   text-align: center;
 }
 
@@ -69,6 +69,7 @@ button {
   border-radius: var(--border-radius-small);
   box-shadow: 2px 2px 0 0 var(--color-light);
   transition-duration: 200ms;
+  cursor: pointer;
 }
 
 button:hover {
@@ -79,6 +80,13 @@ button:hover {
 a {
   color: var(--color-secondary-200);
   text-decoration: none;
+}
+
+#btns {
+  display: flex;
+  width: 20rem;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
 footer {
