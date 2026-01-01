@@ -50,16 +50,22 @@
         }
         router.push("/notes")
     }
+
+    function deleteAll(): void {
+        title.value = ""
+        body.value = ""
+        selectedColor.value = ""
+    }
 </script>
 
 <template>
     <form action="/notes" @submit="handleSubmit">
         <label for="title"><h5>Title</h5></label>
         <input type="text" name="title" id="title"
-            placeholder="Water might not be wet" v-model="title">
+            placeholder="Water might not be wet" v-model="title" required>
         <br>
         <label for="body"><h5>Description</h5></label>
-        <textarea name="body" id="body" :placeholder="textPlaceholder" 
+        <textarea name="body" id="body" :placeholder="textPlaceholder" required
             v-model="body"></textarea>
         <br>
         <h5>Color</h5>
@@ -73,7 +79,7 @@
         </div>
         <br>
         <div id="formButtons">
-            <button type="reset">
+            <button type="reset" @click="deleteAll">
                 Clean
                 <i class="fa-solid fa-arrow-rotate-left"></i>
             </button>
