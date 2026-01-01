@@ -33,11 +33,12 @@ const item: "all" | "note" = "note"
     <section id="thisNote" :class="thisNote.color">
         <h1>{{ thisNote.title }}</h1>
         <p><i>{{ thisNote.createdAt }}</i></p>
-        <h5>
+        <!-- <h5>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, atque ab. Sequi rem, ducimus eligendi,
             itaque suscipit dolor odio dolore quisquam tempora molestias laudantium alias minus sed commodi, aut
             voluptates?
-        </h5>
+        </h5> -->
+        <h5>{{ thisNote.body }}</h5>
     </section>
     <br>
     <div id="btns">

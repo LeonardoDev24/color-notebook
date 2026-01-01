@@ -47,10 +47,10 @@ const item: "all" | "note" = "all"
                             <h4>{{ note.title }}</h4>
                             <small><i>{{ note.createdAt }}</i></small>
                         </div>
-                        <!-- <p>{{ note.body }}</p> -->
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam officiis aliquam rem!
+                        <p>{{ note.body }}</p>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam officiis aliquam rem!
                             Vitae nesciunt atque laborum repellat. Quisquam, sunt a rem quaerat quod, illo magni neque
-                            harum officia iste soluta.</p>
+                            harum officia iste soluta.</p> -->
                     </article>
                 </RouterLink>
             </li>
